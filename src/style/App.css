@@ -214,7 +214,7 @@ body{
 
 .sidebar, .trends{
     background-color: #1D9BF0 !important;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .sidebar{
