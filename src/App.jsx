@@ -7,21 +7,21 @@ import('./style/App.css');
 
 export default function App() {
   return (
-    <Layout>
-      <Home />
-    </Layout>
+    // <Layout>
+    //   <Home />
+    // </Layout>
 
-    // <Router>
-    //   <Routes>
-    //     <Route path={"/"} element={<Layout><Home /></Layout>} />
+    <Router>
+      <Routes>
+        <Route path={"/"} element={<Layout><Home /></Layout>} />
 
-    //     {/* <Route path={"/providerList"} element={<ProviderListPage/>} />
+        {/* <Route path={"/providerList"} element={<ProviderListPage/>} />
 
-    //     <Route exact path={"/ownerList"} element={<OwnerListPage/>} />
+        <Route exact path={"/ownerList"} element={<OwnerListPage/>} />
 
-    //     <Route exact path={"/companyDetails"} element={<CompanyDetailsPage/>} /> */}
+        <Route exact path={"/companyDetails"} element={<CompanyDetailsPage/>} /> */}
 
-    //   </Routes>
-    // </Router>
+      </Routes>
+    </Router>
   );
 }
