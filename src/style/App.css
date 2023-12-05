@@ -163,7 +163,7 @@ body{
 }
 
 .tweet-image img{
-    /* width: 100%; */
+    width: 100%;
     max-width: 100%;
     height: auto;
     border-radius: 50px;
@@ -192,4 +192,16 @@ body{
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
+
+.hover-reply:hover, .svg-reply:hover{
+    color: rgb(249, 24, 128);
+}
+
+.hover-retweet:hover, .svg-retweet:hover{
+    color: rgb(0, 186, 124);
+}
+
+.hover-react:hover, .svg-react:hover{
+    color: rgb(29, 155, 240);
 }

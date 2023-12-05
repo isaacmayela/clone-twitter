@@ -40,7 +40,7 @@ const userTweetInformations = [
         tweetAvatarUrl:'src/images/image12.png',
         tweetTitle: <TweetTitle author='Twitter' usename="@twitter" time="Oct 4"/>,
         tweetText:"hello literally everyone",
-        tweetImageUrl:"src/images/image3.png",
+        tweetImageUrl:"",
         tweetActions:<TweeterActions viewOne={"57"} viewTwo={"144"} viewThree={"184"}/>
     }
 ]
