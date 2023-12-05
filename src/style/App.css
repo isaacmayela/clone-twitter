@@ -10,12 +10,16 @@ body{
 
 #root{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* justify-content: space-between; */
 }
 
+/* timeline style */
+
 .timeline {
-    flex: 0 0 800px;
+    /* flex: 0 0 800px; */
+    grid-column: 3/10;
     font-family: 'Inter', sans-serif;
     border-left: 1px solid #2F3336;
     border-right: 1px solid #2F3336;
@@ -204,4 +208,20 @@ body{
 
 .hover-react:hover, .svg-react:hover{
     color: rgb(29, 155, 240);
+}
+
+/* sidebar style */
+
+.sidebar, .trends{
+    background-color: #1D9BF0 !important;
+    height: 100vh;
+}
+
+.sidebar{
+    grid-column: 1/3;
+    padding: 1.5em 2em;
+}
+
+.trends{
+    grid-column: 10/13;
 }
