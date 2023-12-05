@@ -1,4 +1,4 @@
-function Trends() {
+function SidebarItem({icon, description}) {
     return (
       <>
         <div className="trends">
@@ -8,4 +8,4 @@ function Trends() {
     );
   }
   
-  export default Trends;
+  export default SidebarItem;
