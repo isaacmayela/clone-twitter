@@ -6,9 +6,9 @@ import { NavLink } from "react-router-dom";
 function Sidebar() {
     return (
         <div className="sidebar">
-            <NavLink to={"/"}>
-                <img src="src/images/Twitter.png" alt="twitter logo" />
-            </NavLink>
+            {/* <NavLink to={"/"}> */}
+            <img src="src/images/Twitter.png" alt="twitter logo" />
+            {/* </NavLink> */}
             
 
             {
