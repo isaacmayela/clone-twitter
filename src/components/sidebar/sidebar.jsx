@@ -12,7 +12,7 @@ function Sidebar() {
 
             {
                 sidebarNavigationElements.map((element) =>(
-                    <SidebarItem icon={element.navIcon} description={element.navText}/>
+                    <SidebarItem icon={element.navIcon} description={element.navText} key={element.id}/>
                 ))
             }
 

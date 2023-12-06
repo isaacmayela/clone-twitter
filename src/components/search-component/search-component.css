@@ -1,0 +1,19 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #2f3439;
+    padding: 0.5em 1em;
+    border-radius: 40px;
+}
+
+.search-bar input {
+    outline: none;
+    border: none;
+    padding: 0.5em;
+    background-color: #2f3439;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    margin-left: 0.5em;
+    color: #fff;
+    font-weight: 500;
+}

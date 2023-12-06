@@ -1,0 +1,25 @@
+.trends-container{
+    padding: 0.9em;
+    background-color: #2f3439;
+    border-radius: 10px;
+    margin-top: 1em;
+}
+
+.trends-list li{
+    list-style-type: none;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.trends-title{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 0.5em;
+}
+
+.trend-title{
+    display: flex;
+    justify-content: space-between; 
+}

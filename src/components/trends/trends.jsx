@@ -1,10 +1,13 @@
 import "./trends.css"
+import SearchComponent from "../search-component/seach-component";
+import TrendsDescription from "../trends-description/trends-description";
 
 function Trends() {
     return (
       <>
         <div className="trends">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus provident asperiores nulla minus enim hic, ex dolores eum ipsam repellendus aperiam ipsa nesciunt fugiat dolorem, quasi, nemo molestias molestiae exercitationem.</p>
+           <SearchComponent />
+           <TrendsDescription />
         </div>
       </>
     );
