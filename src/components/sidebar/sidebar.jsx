@@ -6,16 +6,19 @@ import { NavLink } from "react-router-dom";
 function Sidebar() {
     return (
         <div className="sidebar">
-            {/* <NavLink to={"/"}> */}
-            <img src="src/images/Twitter.png" alt="twitter logo" />
-            {/* </NavLink> */}
-            
+            <a href="/">
+                <img src="src/images/Twitter.png" alt="twitter logo" />
+            </a>          
 
             {
-            sidebarNavigationElements.map((element) =>(
-                <SidebarItem icon={element.navIcon} description={element.navText}/>
-            ))
-        }
+                sidebarNavigationElements.map((element) =>(
+                    <SidebarItem icon={element.navIcon} description={element.navText}/>
+                ))
+            }
+
+            <div className="button-container">
+                <a href="#" className="tweet-button">Tweet</a>
+            </div>
         </div>
     );
   }
