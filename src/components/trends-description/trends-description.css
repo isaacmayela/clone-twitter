@@ -5,6 +5,10 @@
     margin-top: 1em;
 }
 
+.trends-list{
+    margin-bottom: 2em;
+}
+
 .trends-list li{
     list-style-type: none;
     margin-top: 2em;
@@ -22,4 +26,14 @@
 .trend-title{
     display: flex;
     justify-content: space-between; 
+}
+
+.trend-title p{
+    color: #8f9396; 
+}
+
+.see-more-button{
+    color: #279fef;
+    text-decoration: none;
+    font-weight: 600;
 }

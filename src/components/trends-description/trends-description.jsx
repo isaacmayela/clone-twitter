@@ -28,6 +28,8 @@ function TrendsDescription() {
                 
             </div>
 
+            <a href="#" className="see-more-button">Show more</a>
+
         </div>
       </>
     );

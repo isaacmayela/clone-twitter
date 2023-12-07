@@ -1,0 +1,40 @@
+.chanels-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.chanel-profile{
+    align-items: center;
+    display: flex;
+    gap: 0.8em;
+}
+
+.username h6{
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.username p{
+    color: #8f9396;
+}
+
+.editor{
+    display: flex;
+    gap: 0.2em;
+}
+
+.follow-button{
+    background-color: #fff;
+    height: 1em;
+    padding: 1em;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 20px;
+}
