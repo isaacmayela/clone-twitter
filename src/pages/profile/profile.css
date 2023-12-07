@@ -1,0 +1,76 @@
+.profile-editor{
+    padding: 1em;
+}
+
+.editor{
+    display: flex;
+    align-items: center;
+}
+
+.profile-editor h3{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.profile-editor p{
+    color: #8f9396;
+    font-size: 0.8em;
+}
+
+.private,.more-icon{
+    width: 1em;
+}
+
+.profile-banner{
+    position: relative;
+    padding-bottom: 5em;
+}
+
+.profile-banner > img{
+    width: 100%;
+    height: 300px;
+}
+
+.user-profile{
+    background-color: #fff;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 0.1em;
+    border: 1px solid rgb(235, 232, 232);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 60%;
+    left: 2%;
+}
+
+.user-profile img{
+    width: 160px;
+}
+
+.button-follow{
+    height: 1em;
+    padding: 1em;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #279fef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 2px solid #279fef;
+    position: absolute;
+    right: 2%;
+    bottom: 8%;
+}
+
+.acount-description{
+    padding: 1em;
+}
+
+.caption{
+    margin-top: 2em;
+}

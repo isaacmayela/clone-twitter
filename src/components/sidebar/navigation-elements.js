@@ -3,7 +3,7 @@ const sidebarNavigationElements = [
         id:1,
         navIcon:'src/images/Home-Fill.png',
         navText: "Home",
-        destination: "",
+        destination: "/",
     },
     {
         id:2,
@@ -39,7 +39,7 @@ const sidebarNavigationElements = [
         id:7,
         navIcon:'src/images/Profile.png',
         navText: "Profile",
-        destination: "",
+        destination: "/username",
     },
     {
         id:8,

@@ -43,6 +43,7 @@ import ReactDOM from 'react-dom/client'
 import Layout from './components/layout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/home';
+import Profile from './pages/profile/profile';
 import('./style/reset.css');
 import('./style/App.css');
 
@@ -54,37 +55,13 @@ let router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/username",
+        element: <Profile />,
       }
     ]
   },
-  // {
-  //   path: "/explore",
-  //   element: <Explore/>,
-  // },
-  // {
-  //   path: "/notification",
-  //   element: <NotiFication/>,
-  // },
-  // {
-  //   path: "/messages",
-  //   element: <Messages/>,
-  // },
-  // {
-  //   path: "/bookmarks",
-  //   element: <BookMarks/>,
-  // },
-  // {
-  //   path: "/lists",
-  //   element: <Lists/>,
-  // },
-  // {
-  //   path: "/profile",
-  //   element: <Profile/>,
-  // },
-  // {
-  //   path: "/more",
-  //   element: <More/>,
-  // }
   
  ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

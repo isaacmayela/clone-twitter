@@ -8,13 +8,13 @@ function Sidebar() {
         <div className="sidebar">
 
            <div>
-            <a href="/">
+            <NavLink to="/">
                     <img src="src/images/Twitter.png" alt="twitter logo" />
-                </a>          
+            </NavLink>          
 
                 {
                     sidebarNavigationElements.map((element) =>(
-                        <SidebarItem icon={element.navIcon} description={element.navText} key={element.id}/>
+                        <SidebarItem icon={element.navIcon} description={element.navText} key={element.id} destination={element.destination}/>
                     ))
                 }
 
