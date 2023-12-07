@@ -1,49 +1,11 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import App from './App'
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-
-
-
-// import Home from "./pages/home.jsx";
-// import Layout from "./components/layout.jsx";
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// import('./style/reset.css');
-// import('./style/App.css');
-
-// export default function App() {
-//   return (
-//     <Layout>
-//       <Home />
-//     </Layout>
-
-//     // <Router>
-//     //   <Routes>
-//     //     <Route path={"/"} element={<Layout><Home /></Layout>} />
-
-//     //     {/* <Route path={"/providerList"} element={<ProviderListPage/>} />
-
-//     //     <Route exact path={"/ownerList"} element={<OwnerListPage/>} />
-
-//     //     <Route exact path={"/companyDetails"} element={<CompanyDetailsPage/>} /> */}
-
-//     //   </Routes>
-//     // </Router>
-//   );
-// }
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Layout from './components/layout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/home';
 import Profile from './pages/profile/profile';
+import ProfileUsername from './pages/profile-username';
+import OtherProfiles from './pages/other-profiles';
 import('./style/reset.css');
 import('./style/App.css');
 
@@ -56,10 +18,26 @@ let router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      // {
+      //   path: "/username",
+      //   element: <Profile />,
+      // },
+
       {
         path: "/username",
         element: <Profile />,
-      }
+        children: [
+          {
+            path: "",
+            element: <ProfileUsername />,
+          },
+          {
+            path: ":id",
+            element: <OtherProfiles />,
+          },
+        ],
+      },
+
     ]
   },
   

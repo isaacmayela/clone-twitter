@@ -1,18 +1,10 @@
-import React from 'react';
-import "./profile.css"
-import { Outlet } from 'react-router-dom';
+// import { userTweetInformations } from '../../useFetch';
 
-import { useParams } from "react-router-dom";
 
-function Profile() {
-
-    
+function ProfileUsername({imageUrl,children}) {
   return (
-    <main className="timeline">
-
-    <Outlet />
-
-        {/* <div className="profile-container">
+    <>
+        <div className="profile-container">
             <div className="profile-editor">
                 <div className="editor">
                     <h3>Bradley Ortiz</h3>
@@ -22,17 +14,17 @@ function Profile() {
                 </div>
                 <p>1,608 Tweets</p>
             </div>
-        </div> */}
+        </div>
 
-        {/* <div className='profile-banner'>
+        <div className='profile-banner'>
             <img src="src/images/paysages.jpg" alt="paysages" />
             <div className="user-profile">
                 <img src="src/images/profile-photo.png" alt="user profile" />
             </div>
             <a href="#" className='button-follow'>Follow</a>
-        </div> */}
+        </div>
 
-        {/* <div className="acount-description">
+        <div className="acount-description">
             <div className="profile-editor">
                 <div className="editor">
                     <h3>Bradley Ortiz</h3>
@@ -45,9 +37,9 @@ function Profile() {
             <div className="caption">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias facere neque repudiandae modi? Magni quo eius sint dignissimos? Doloremque corrupti nulla nam quisquam recusandae voluptate quas laborum sunt perspiciatis magnam?</p>
             </div>
-        </div> */}
-    </main>
+        </div>
+    </> 
   );
 }
 
-export default Profile;
+export default ProfileUsername;

@@ -1,15 +1,22 @@
 import React from 'react';
-import { userTweetInformations } from '../../useFetch';
+// import { userTweetInformations } from '../../useFetch';
+import { Link } from 'react-router-dom';
+import ProfileService from '../../useFetch';
 
 
 function Tweet({imageUrl,children}) {
+
+    const data = ProfileService.getProfile();
+
   return (
     <>
         {
-            userTweetInformations.map((tweetInfo) =>(
+            data.map((tweetInfo) =>(
                 <div className='tweet' key={tweetInfo.id}>
                     <div className='tweet-avatar'>
-                        <img src={tweetInfo.tweetAvatarUrl} alt="tweet avatar" />
+                        <Link to={`/username/${tweetInfo.id}`}>
+                            <img src={tweetInfo.tweetAvatarUrl} alt="tweet avatar" />
+                        </Link>
                     </div>
                     <div className='tweet-content'>
                         <div className='tweet-body'>
