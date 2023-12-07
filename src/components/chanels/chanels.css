@@ -1,3 +1,7 @@
+.chanels-list{
+    margin-top: 1.5em;
+}
+
 .chanels-list li{
     display: flex;
     align-items: center;

@@ -7,48 +7,54 @@ class ProfileService {
         const userTweetInformations = [
             {
                 id:"1",
-                profileName:'Trending in Turkey',
+                profileName:'CNN',
                 tweetAvatarUrl:'src/images/image1.png',
-                tweetTitle: <TweetTitle author='CNN' usename="@CNN" time="7m"/>,
+                tweetTitle: <TweetTitle author='CNN' username="@CNN" time="7m"/>,
                 tweetText:"President Joe Biden touted a new agreement reached with the European Union to ease Trump-era tariffs on aluminum and steel as a 'major breakthrough' that would serve to both strengthen the US steel industry and combat the global climate crisis.",
                 tweetImageUrl:"",
-                tweetActions:<TweeterActions viewOne={"19"} viewTwo={"48"} viewThree={"482"}/>
+                tweetActions:<TweeterActions viewOne={"19"} viewTwo={"48"} viewThree={"482"}/>,
+                profileUsername: "@CNN",
             },
             {
                 id:"2",
-                profileName:'Trending in Turkey',
+                profileName:'The New York Times',
+                usename: "@nytimes",
                 tweetAvatarUrl:'src/images/image11.png',
                 tweetTitle: <TweetTitle author='The New York Times' usename="@nytimes" time="2h"/>,
                 tweetText:"Gardening boomed during the pandemic. Six Black writers share how it has helped them re-establish, and reimagine, a connection to cultivation and the land",
                 tweetImageUrl:"src/images/image3.png",
-                tweetActions:<TweeterActions viewOne={"6.8K"} viewTwo={"36.6K"} viewThree={"267.1K"}/>
+                tweetActions:<TweeterActions viewOne={"6.8K"} viewTwo={"36.6K"} viewThree={"267.1K"}/>,
+                profileUsername: "@CNN",
             },
             {
                 id:"3",
-                profileName:'Trending in Turkey',
+                profileName:'Twitter',
                 tweetAvatarUrl:'src/images/image12.png',
                 tweetTitle: <TweetTitle author='Twitter' usename="@twitter" time="Oct 29"/>,
                 tweetText:"BIG NEWS lol jk still Twitter",
                 tweetImageUrl:"",
-                tweetActions:<TweeterActions viewOne={"118.7K"} viewTwo={"785.4K"} viewThree={"3.3M"}/>
+                tweetActions:<TweeterActions viewOne={"118.7K"} viewTwo={"785.4K"} viewThree={"3.3M"}/>,
+                profileUsername: "@Twitter",
             },
             {
                 id:"4",
-                profileName:'Trending in Turkey',
+                profileName:'Twitter',
                 tweetAvatarUrl:'src/images/image12.png',
                 tweetTitle: <TweetTitle author='Twitter' usename="@twitter" time="Oct 4"/>,
                 tweetText:"hello literally everyone",
                 tweetImageUrl:"",
-                tweetActions:<TweeterActions viewOne={"118.7K"} viewTwo={"785.4K"} viewThree={"3.3M"}/>
+                tweetActions:<TweeterActions viewOne={"118.7K"} viewTwo={"785.4K"} viewThree={"3.3M"}/>,
+                profileUsername: "@Twitter",
             },
             {
                 id:"5",
-                profileName:'Trending in Turkey',
+                profileName:'Twitter',
                 tweetAvatarUrl:'src/images/image12.png',
                 tweetTitle: <TweetTitle author='Twitter' usename="@twitter" time="Oct 4"/>,
                 tweetText:"hello literally everyone",
                 tweetImageUrl:"",
-                tweetActions:<TweeterActions viewOne={"57"} viewTwo={"144"} viewThree={"184"}/>
+                tweetActions:<TweeterActions viewOne={"57"} viewTwo={"144"} viewThree={"184"}/>,
+                profileUsername: "@Twitter",
             }
         ]
         return userTweetInformations;
