@@ -19,4 +19,36 @@
     text-decoration: none;
     width: 100%;
     background-color: #1d9bf0;
+    display: flex;
+    font-size: 1.1em;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7em;
+    border-radius: 30px;
+    margin-top: 2em;
+}
+
+.profile-photo{
+    width: 2.5em;
+}
+
+
+.profile-container{
+    align-items: center;
+    display: flex;
+    gap: 0.8em;
+}
+
+.profile h6{
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+.profile p{
+    color: #8f9396;
+    font-size: 0.7em;
+}
+
+.private,.more-icon{
+    width: 1em;
 }
