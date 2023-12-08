@@ -1,10 +1,11 @@
 import "./search-component.css"
+import searchIcon from "../../images/search.png"
 
 function SearchComponent() {
     return (
       <>
         <div className="search-bar">
-            <img src="src/images/Search.png" alt="search icon" />
+            <img src={searchIcon} alt="search icon" />
             <input type="search" placeholder="Search Twitter" name="search-bar" id="" />
         </div>
       </>

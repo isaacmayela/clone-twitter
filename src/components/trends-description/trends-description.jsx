@@ -1,5 +1,7 @@
 import "./trends-description.css"
 import { trendsElements } from "./trends-elements";
+import settingsIcon from "../../images/Settings.png"
+import MoreIcon from "../../images/More-2.png"
 
 function TrendsDescription() {
     return (
@@ -7,7 +9,7 @@ function TrendsDescription() {
         <div className="trends-container">
            <div className="trends-title">
             <h3>Trends for you</h3>
-            <img src="src/images/Settings.png" alt="setting logo" />
+            <img src={settingsIcon} alt="setting logo" />
            </div>
 
             <div className="trends-list">
@@ -17,7 +19,7 @@ function TrendsDescription() {
                             <li key={element.id}>
                                 <div className="trend-title">
                                     <p>{element.trendTitle}</p>
-                                    <img src="src/images/More-2.png" alt="" />
+                                    <img src={MoreIcon} alt="" />
                                 </div>
                                 <h5>{element.trendDescription}</h5>
                                 <p>{element.trendNumbers}</p>
