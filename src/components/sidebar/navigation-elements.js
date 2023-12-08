@@ -39,7 +39,7 @@ const sidebarNavigationElements = [
         id:7,
         navIcon:'src/images/Profile.png',
         navText: "Profile",
-        destination: "/username",
+        destination: "/profile",
     },
     {
         id:8,

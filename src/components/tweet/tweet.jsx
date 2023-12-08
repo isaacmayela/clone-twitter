@@ -14,7 +14,7 @@ function Tweet({imageUrl,children}) {
             data.map((tweetInfo) =>(
                 <div className='tweet' key={tweetInfo.id}>
                     <div className='tweet-avatar'>
-                        <Link to={`/username/${tweetInfo.id}`}>
+                        <Link to={`/profile/${tweetInfo.profileUsername}`}>
                             <img src={tweetInfo.tweetAvatarUrl} alt="tweet avatar" />
                         </Link>
                     </div>

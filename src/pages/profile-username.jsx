@@ -1,6 +1,5 @@
 // import { userTweetInformations } from '../../useFetch';
 
-
 function ProfileUsername({imageUrl,children}) {
   return (
     <>
@@ -35,7 +34,9 @@ function ProfileUsername({imageUrl,children}) {
                 <p>@Bradley...</p>
             </div>
             <div className="caption">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias facere neque repudiandae modi? Magni quo eius sint dignissimos? Doloremque corrupti nulla nam quisquam recusandae voluptate quas laborum sunt perspiciatis magnam?</p>
+                <p>Man from the South Side and Former First Man. Husband, Father, dog lover. Always hugger-in-chief. I've love DRC and i will be the president in election of 20 December.</p>
+                <p>Kinshasa</p>
+                <p><strong>17</strong> Following   <strong>19.3M</strong> Followers</p>
             </div>
         </div>
     </> 

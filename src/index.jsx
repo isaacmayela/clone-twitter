@@ -24,7 +24,7 @@ let router = createBrowserRouter([
       // },
 
       {
-        path: "/username",
+        path: "/profile",
         element: <Profile />,
         children: [
           {
@@ -32,7 +32,7 @@ let router = createBrowserRouter([
             element: <ProfileUsername />,
           },
           {
-            path: ":id",
+            path: ":username",
             element: <OtherProfiles />,
           },
         ],

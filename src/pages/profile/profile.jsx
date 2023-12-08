@@ -2,15 +2,13 @@ import React from 'react';
 import "./profile.css"
 import { Outlet } from 'react-router-dom';
 
-import { useParams } from "react-router-dom";
-
 function Profile() {
 
     
   return (
     <main className="timeline">
 
-    <Outlet />
+        <Outlet />
 
         {/* <div className="profile-container">
             <div className="profile-editor">
