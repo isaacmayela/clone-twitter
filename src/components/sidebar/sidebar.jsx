@@ -1,7 +1,7 @@
 import "./sidebar.css"
 import { sidebarNavigationElements } from "./navigation-elements";
 import SidebarItem from "../sidebar-item/sidebar-item";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import twitterLogo from "../../images/Twitter.png"
 import bradleyLogo from "../../images/profile-photo.png"
 import moreIcon from "../../images/More-2.png"
@@ -11,9 +11,9 @@ function Sidebar() {
         <div className="sidebar">
 
            <div>
-            <NavLink to="/">
-                    <img src={twitterLogo} alt="twitter logo" />
-            </NavLink>          
+            <Link to="/">
+                <img src={twitterLogo} alt="twitter logo" />
+            </Link>          
 
                 {
                     sidebarNavigationElements.map((element) =>(
@@ -28,7 +28,9 @@ function Sidebar() {
 
             <div className="profile-container">
                 <div className="profile-container">
-                    <img src={bradleyLogo} alt="profile" className="profile-photo"/>
+                    <Link to="/profile">
+                        <img src={bradleyLogo} alt="profile" className="profile-photo"/>
+                    </Link>
                     <div className="profile">
                         <div className="editor">
                             <h6>Bradley Ortiz</h6>

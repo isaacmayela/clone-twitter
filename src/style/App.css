@@ -191,15 +191,17 @@ body{
     color: #2F3336;
 }
 
-.tweet-action{
+.tweet-action .action-link{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 0.5em;
+    text-decoration: none;
+    color: #aeaeae;
 }
 
-.hover-reply svg{
-    width: 15px;
+.hover-reply svg, .hover-retweet svg, .hover-react svg, .hover-reply svg{
+    width: 35px;
 }
 
 .hover-reply:hover svg{
@@ -208,27 +210,31 @@ body{
     fill: rgb(249, 24, 128);
 }
 
-.hover-reply:hover {
+.hover-reply .action-link:hover {
     color: rgb(249, 24, 128);
 }
 
 /*  */
 
-.hover-retweet:hover, .svg-retweet:hover{
+.hover-retweet:hover svg{
+    color: rgb(0, 186, 124);
+    stroke: rgb(0, 186, 124);
+    fill: rgb(0, 186, 124);
+}
+
+.hover-retweet .action-link:hover{
     color: rgb(0, 186, 124);
 }
 
-.hover-react:hover, .svg-react:hover{
+.hover-react .action-link:hover{
     color: rgb(29, 155, 240);
 }
 
-/* sidebar style */
-
-/* .sidebar, .trends{
-    background-color: #1D9BF0 !important; */
-    /* height: 100vh; */
-    /* position: fixed;
-} */
+.hover-react:hover svg{
+    color: rgb(29, 155, 240);
+    stroke: rgb(29, 155, 240);
+    fill: rgb(29, 155, 240);
+}
 
 .sidebar{
     grid-column: 1/3;

@@ -1,5 +1,6 @@
 import "./chanels.css"
 import ProfileService from "../../useFetch";
+import { Link } from "react-router-dom";
 
 function Chanels() {
 
@@ -20,7 +21,9 @@ function Chanels() {
                         dataSlice.map((element) =>(
                             <li key={element.id}>
                                 <div className="chanel-profile">
-                                    <img src={element.tweetAvatarUrl} alt="profile" />
+                                    <Link to={`/profile/${element.profileUsername}`}>
+                                        <img src={element.tweetAvatarUrl} alt="profile" />
+                                    </Link>
                                     <div className="username">
                                         <div className="editor">
                                             <h6>{element.profileName}</h6>
