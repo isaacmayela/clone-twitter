@@ -22,7 +22,7 @@ function Sidebar() {
                 }
 
                 <div className="button-container">
-                    <a href="#" className="tweet-button">Tweet</a>
+                    <a href="#" className="tweet-button">Tweets</a>
                 </div>
            </div>
 
