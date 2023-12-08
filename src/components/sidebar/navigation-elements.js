@@ -4,7 +4,7 @@ import notificationsImage from "../../images/Notifications.png"
 import messageImage from "../../images/Messages.png"
 import bookmarksImage from "../../images/Bookmarks.png"
 import listsImage from "../../images/Lists.png" 
-import profileImage from "../../images/profile.png"
+import profileImage from "../../images/Profile.png"
 import moreImage from "../../images/More.png"
 
 // src/images/Home-Fill.png

@@ -1,5 +1,5 @@
 import "./search-component.css"
-import searchIcon from "../../images/search.png"
+import searchIcon from "../../images/Search.png"
 
 function SearchComponent() {
     return (

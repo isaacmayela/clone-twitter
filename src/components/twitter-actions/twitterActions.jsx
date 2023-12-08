@@ -1,6 +1,6 @@
 import React from 'react';
 import "./tweet-actions.css"
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function TweeterActions({viewOne, viewTwo, viewThree}) {
   return (

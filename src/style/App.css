@@ -204,33 +204,19 @@ body{
     width: 35px;
 }
 
-.hover-reply:hover svg{
+.hover-reply .action-link:hover, .hover-reply .action-link:focus {
     color: rgb(249, 24, 128);
     stroke: rgb(249, 24, 128);
     fill: rgb(249, 24, 128);
 }
 
-.hover-reply .action-link:hover {
-    color: rgb(249, 24, 128);
-}
-
-/*  */
-
-.hover-retweet:hover svg{
+.hover-retweet .action-link:hover, .hover-retweet .action-link:focus{
     color: rgb(0, 186, 124);
     stroke: rgb(0, 186, 124);
     fill: rgb(0, 186, 124);
 }
 
-.hover-retweet .action-link:hover{
-    color: rgb(0, 186, 124);
-}
-
-.hover-react .action-link:hover{
-    color: rgb(29, 155, 240);
-}
-
-.hover-react:hover svg{
+.hover-react .action-link:hover, .hover-react .action-link:focus{
     color: rgb(29, 155, 240);
     stroke: rgb(29, 155, 240);
     fill: rgb(29, 155, 240);
@@ -243,8 +229,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* position: fixed;
-    width: 100%; */
 }
 
 .trends{
