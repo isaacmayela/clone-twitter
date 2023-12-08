@@ -18,10 +18,6 @@ let router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      // {
-      //   path: "/username",
-      //   element: <Profile />,
-      // },
 
       {
         path: "/profile",

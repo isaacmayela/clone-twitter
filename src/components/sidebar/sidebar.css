@@ -7,6 +7,15 @@
     font-weight: 600;
     color: #fff;
     margin-top: 1.5em;
+    /* background-color: #1d9bf0; */
+    /* padding: ; */
+}
+
+.sidebar-item a:hover{
+    margin-top: 0.2;
+    padding: 0.5em;
+    background-color: rgb(48, 48, 48);
+    border-radius: 20px;
 }
 
 .tweet-button{
