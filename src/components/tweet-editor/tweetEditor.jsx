@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function TweetEditor() { 
   return (
     <div className="tweet-editor">
       <div className='avatar'>
+      <Link to="/profile">
         <img src="src/images/profile-photo.png" alt="profile photo"/>
+      </Link>
       </div>
       <form className='tweet-editor-form'>
         <input type="text" placeholder="What's happening ?" className='tweet-editor-input'/>
