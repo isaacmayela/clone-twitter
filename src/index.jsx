@@ -6,13 +6,14 @@ import Home from './pages/home';
 import Profile from './pages/profile/profile';
 import ProfileUsername from './pages/profile-username';
 import OtherProfiles from './pages/other-profiles';
+import Login from './pages/login';
 import('./style/reset.css');
 import('./style/App.css');
 
 let router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <Login />,
     children: [
       {
         path: "/",

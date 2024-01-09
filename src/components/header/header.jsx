@@ -5,7 +5,6 @@ function Header() {
   return (
     <div className="header">
       <h1 className='page-title'>Home</h1>
-      <img src="src/images/Timeline-Prop.png" alt="Timeline logo" className="top-tweets" />
     </div>
   );
 }

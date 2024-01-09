@@ -19,7 +19,7 @@ body{
 
 .timeline {
     /* flex: 0 0 800px; */
-    grid-column: 3/10;
+    grid-column: 3/11;
     font-family: 'Inter', sans-serif;
     border-left: 1px solid #2F3336;
     border-right: 1px solid #2F3336;
@@ -237,3 +237,7 @@ body{
     padding: 0 1em;
 }
 
+.login-container{
+    background-color: #1D9BF0;
+    height: 300px;
+}
