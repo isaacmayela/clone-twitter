@@ -19,10 +19,17 @@ body{
 
 .timeline {
     /* flex: 0 0 800px; */
-    grid-column: 3/11;
+    grid-column: 3/10;
     font-family: 'Inter', sans-serif;
     border-left: 1px solid #2F3336;
     border-right: 1px solid #2F3336;
+}
+
+.login-container{
+    grid-column: 3/11;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
 .header {
@@ -237,7 +244,49 @@ body{
     padding: 0 1em;
 }
 
-.login-container{
-    background-color: #1D9BF0;
+.element-container{
     height: 300px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.element-container img{
+    width: 2.5em;
+}
+
+.element-container h1{
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+.element-container input{
+    margin-top: 1em;
+    color: #404549;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #404549;
+    padding: 0.1em 0.2em 0.8em 0.2em;
+    background-color: #e6e8ea;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.login-button-container{
+    margin-top: 1em;
+    width: 100%;
+}
+
+.login-button-container a{
+    background-color: #4fa1dc;
+    display: flex;
+    justify-content: center;
+    padding: 0.4em 0;
+    font-weight: 600;
+    border-radius: 3px;
 }
