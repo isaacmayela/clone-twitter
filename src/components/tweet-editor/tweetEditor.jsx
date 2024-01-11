@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import UserContext from '../../context/UserContext';
 import { useNavigate } from "react-router-dom";
 import UserModel from '../../models/userModel';
+import TweetEditorButtons from '../tweet-editor-buttons/tweet-editor-buttons';
 
 function TweetEditor() {
 
@@ -34,21 +35,7 @@ function TweetEditor() {
         <input type="text" placeholder="What's happening ?" className='tweet-editor-input'/>
         <div className='tweet-editor-buttons'>
           <div className='tweet-editor-actions'>
-            <button>
-              <img src="src/images/Media.png" alt="screen image"/>
-            </button>
-            <button>
-              <img src="src/images/Gif.png" alt="gif image"/>
-            </button>
-            <button>
-              <img src="src/images/Poll.png" alt="screen image"/>
-            </button>
-            <button>
-              <img src="src/images/Group.png" alt="screen image"/>
-            </button>
-            <button>
-              <img src="src/images/Schedule.png" alt="screen image"/>
-            </button>
+            <TweetEditorButtons/>
           </div>
           <button className='button'>Tweet</button>
         </div>
