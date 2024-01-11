@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import ProfileService from '../useFetch';
 import ProfileComponent from '../components/profile-component/profileComponent';
 import UserModel from '../models/userModel';
+import Tweets from '../components/tweets/tweets';
 
 function OtherProfiles({imageUrl,children}) {
 
@@ -15,7 +15,8 @@ function OtherProfiles({imageUrl,children}) {
 
   return (
     <>
-      <ProfileComponent profileName={profile.profileName} bannerProfile={profile.bannerProfile} avatar={profile.profile} username={profile.username} />        
+      <ProfileComponent profileName={profile.profileName} bannerProfile={profile.bannerProfile} avatar={profile.profile} username={profile.username} />
+      <Tweets username={null}/>      
     </> 
   );
 }

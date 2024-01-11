@@ -3,11 +3,20 @@ import jsonDatas from "../../data/initial-data.json";
 import UserModel from '../../models/userModel';
 
 
-function Tweets() {
+function Tweets({username}) {
 
   const users = UserModel.getUsers()
 
-  const tweetsData = jsonDatas.tweets
+  function tweetFilter(username) {
+    if (username){
+      return jsonDatas.tweets.filter((tweets) => tweets.username === username)
+    }
+
+    return jsonDatas.tweets
+    
+  }
+
+  const tweetsData = tweetFilter(username)
 
   function findUser(username) {
       const user = users.find((user) => user.username === username );

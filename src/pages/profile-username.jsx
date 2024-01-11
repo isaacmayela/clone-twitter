@@ -28,7 +28,7 @@ function ProfileUsername({imageUrl,children}) {
 
         <ProfileComponent profileName={currentUser.profileName} bannerProfile={currentUser.bannerProfile} avatar={currentUser.profile} username={currentUser.username} />
         
-        <Tweets/>
+        <Tweets username={user.userName}/>
     </> 
   );
 }
