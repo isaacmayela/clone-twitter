@@ -33,11 +33,11 @@ function ProfileComponent({profileName, bannerProfile, avatar, username}) {
                   </div>
                   <p>{username}</p>
               </div>
-              <div className="caption">
+              {/* <div className="caption">
                   <p>Man from the South Side and Former First Man. Husband, Father, dog lover. Always hugger-in-chief. I've love DRC and i will be the president in election of 20 December.</p>
                   <p>Kinshasa</p>
                   <p><strong>17</strong> Following   <strong>19.3M</strong> Followers</p>
-              </div>
+              </div> */}
           </div>
       </> 
     );

@@ -8,7 +8,7 @@ import UserModel from '../../models/userModel';
 import TweetTitle from '../tweet-title/tweetTitle';
 
 
-function Tweet({imageUrl,children}) {
+function Tweet({username,profileName, avatar, tweetText, image, reply, retweet, react, time }) {
 
     const users = UserModel.getUsers()
 
@@ -21,31 +21,27 @@ function Tweet({imageUrl,children}) {
     
   return (
     <>
-        {
-            tweetsData.map((tweetInfo) =>(
-                <div className='tweet' key={tweetInfo.id}>
-                    <div className='tweet-avatar'>
-                        <Link to={`/profile/${findUser(tweetInfo.username).username}`}>
-                            <img src={findUser(tweetInfo.username).profile} alt="tweet avatar" />
-                        </Link>
+        <div className='tweet'>
+            <div className='tweet-avatar'>
+                <Link to={`/profile/${username}`}>
+                    <img src={avatar} alt="tweet avatar" />
+                </Link>
+            </div>
+            <div className='tweet-content'>
+                <div className='tweet-body'>
+                    <div className="tweet-title">
+                        <TweetTitle author={profileName} username={username} time={time}/>
                     </div>
-                    <div className='tweet-content'>
-                        <div className='tweet-body'>
-                            <div className="tweet-title">
-                                <TweetTitle author={findUser(tweetInfo.username).profileName} username={findUser(tweetInfo.username).username} time={tweetInfo.time}/>
-                            </div>
-                            <p className="tweet-text">{tweetInfo.tweetText}</p>
-                            <div className="tweet-image">
-                                {tweetInfo.tweetImageUrl ? <img src={tweetInfo.tweetImageUrl} alt="tweet image" /> : ""}
-                            </div>
-                        </div>
-                        <div className='tweet-actions'>
-                            <TweeterActions reply={tweetInfo.reply} retweet={tweetInfo.retweet} react={tweetInfo.react}/>
-                        </div>
+                    <p className="tweet-text">{tweetText}</p>
+                    <div className="tweet-image">
+                        {image ? <img src={image} alt="tweet image" /> : ""}
                     </div>
                 </div>
-            ))
-        }
+                <div className='tweet-actions'>
+                    <TweeterActions reply={reply} retweet={retweet} react={react}/>
+                </div>
+            </div>
+        </div>
     </> 
   );
 }

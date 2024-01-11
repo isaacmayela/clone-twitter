@@ -74,8 +74,8 @@ class UserModel {
                 profileName:'Bradley Ortiz',
                 username: "@Bradley",
                 password: "0258",
-                profile:`${noProfileLogo}`,
-                bannerProfile: `${twitter3Banner}`,
+                profile:`${bradleyProfile}`,
+                bannerProfile: `${bradleyBanner}`,
                 isCertified: true
             }
         ]

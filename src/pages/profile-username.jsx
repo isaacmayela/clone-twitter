@@ -3,6 +3,7 @@ import UserContext from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import UserModel from "../models/userModel";
 import { useContext } from "react";
+import Tweets from "../components/tweets/tweets";
 
 function ProfileUsername({imageUrl,children}) { 
 
@@ -27,6 +28,7 @@ function ProfileUsername({imageUrl,children}) {
 
         <ProfileComponent profileName={currentUser.profileName} bannerProfile={currentUser.bannerProfile} avatar={currentUser.profile} username={currentUser.username} />
         
+        <Tweets/>
     </> 
   );
 }
