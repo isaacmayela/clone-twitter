@@ -290,3 +290,34 @@ body{
     font-weight: 600;
     border-radius: 3px;
 }
+
+.box-infos{
+    margin-top: 2em;
+    width: 100%;
+}
+
+.box-infos h3{
+    text-align: center;
+    font-weight: 700;
+    color: red;
+    margin-bottom: 1.5em;
+    font-size: 1.5em;
+}
+
+
+.box-infos table{
+    border: 3px solid red;
+    width: 100%;
+}
+
+.box-infos th{
+   text-align: left;
+   background-color: #aeaeae;
+   color: #0f1010;
+   font-size: 1.1em;
+   font-weight: 800;
+}
+
+.box-infos th, .box-infos td{
+    padding: 0.5em;
+ }

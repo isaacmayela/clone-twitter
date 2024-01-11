@@ -16,7 +16,7 @@ const sidebarNavigationElements = [
         id:1,
         navIcon: `${homeImage}`,
         navText: "Home",
-        destination: "/",
+        destination: "/home",
     },
     {
         id:2,
