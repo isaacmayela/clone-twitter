@@ -4,6 +4,7 @@ import Trends from './trends/trends';
 import { Outlet } from 'react-router-dom';
 
 function Layout({children}) {
+
     return (
         <>
             <Sidebar />

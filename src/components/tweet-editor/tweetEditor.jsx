@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import UserContext from '../../context/UserContext';
 import { useNavigate } from "react-router-dom";
+import UserModel from '../../models/userModel';
 
 function TweetEditor() {
 
@@ -13,11 +14,20 @@ function TweetEditor() {
         navigate("/")
     }
 
+    const users = UserModel.getUsers()
+
+    function findUser(username) {
+      const user = users.find((user) => user.username === username );
+      return user
+    }
+
+    const currentUser = findUser(user.userName)
+
   return (
     <div className="tweet-editor">
       <div className='avatar'>
       <Link to="/profile">
-        <img src="src/images/profile-photo.png" alt="profile photo"/>
+        <img src={currentUser.profile} alt="profile photo"/>
       </Link>
       </div>
       <form className='tweet-editor-form'>

@@ -3,7 +3,6 @@ import { sidebarNavigationElements } from "./navigation-elements";
 import SidebarItem from "../sidebar-item/sidebar-item";
 import { NavLink, Link } from "react-router-dom";
 import twitterLogo from "../../images/Twitter.png"
-import bradleyLogo from "../../images/profile-photo.png"
 import moreIcon from "../../images/More-2.png"
 import { useContext } from "react";
 import UserContext from "../../context/UserContext";
@@ -50,14 +49,14 @@ function Sidebar() {
             <div className="profile-container">
                 <div className="profile-container">
                     <Link to="/profile">
-                        <img src={currentUser.bannerProfile} alt="profile" className="profile-photo"/>
+                        <img src={currentUser.profile} alt="profile" className="profile-photo"/>
                     </Link>
                     <div className="profile">
                         <div className="editor">
-                            <h6>Bradley Ortiz</h6>
+                            <h6>{currentUser.profileName}</h6>
                             <img src="src/images/Private.png" alt="" className="private"/>
                         </div>
-                        <p>Bradley...</p>
+                        <p>{currentUser.username}</p>
                     </div>
                 </div>
                 <img src={moreIcon} alt="more icon" className="more-icon"/>
