@@ -1,0 +1,55 @@
+{
+    "current-user": {}, 
+    "tweets": [
+        {
+            "id":"1",
+            "username":"@CNN",
+            "tweetText":"President Joe Biden touted a new agreement reached with the European Union to ease Trump-era tariffs on aluminum and steel as a 'major breakthrough' that would serve to both strengthen the US steel industry and combat the global climate crisis.",
+            "tweetImageUrl":"",
+            "reply":"0",
+            "retweet":"0",
+            "react":"0",
+            "time": "7m"
+        },
+        {
+            "id":"2",
+            "username":"@nytimes",
+            "tweetText":"Gardening boomed during the pandemic. Six Black writers share how it has helped them re-establish, and reimagine, a connection to cultivation and the land",
+            "tweetImageUrl":"",
+            "reply":"0",
+            "retweet":"0",
+            "react":"0",
+            "time": "2h"
+        },
+        {
+            "id":"3",
+            "username":"@Twitter1",
+            "tweetText":"BIG NEWS lol jk still Twitter",
+            "tweetImageUrl":"",
+            "reply":"0",
+            "retweet":"0",
+            "react":"0",
+            "time": "Oct 29"
+        },
+        {
+            "id":"4",
+            "username":"@Twitter2",
+            "tweetText":"hello literally everyone",
+            "tweetImageUrl":"",
+            "reply":"0",
+            "retweet":"0",
+            "react":"0",
+            "time": "Oct 4"
+        },
+        {
+            "id":"5",
+            "username":"@Twitter3",
+            "tweetText":"hello literally everyone",
+            "tweetImageUrl":"",
+            "reply":"0",
+            "retweet":"0",
+            "react":"0",
+            "time": "Oct 4"
+        }
+    ]
+}

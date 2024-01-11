@@ -19,7 +19,7 @@ function Login({onLoginSubmit}) {
 
         if (hisUsername && (hisUsername === hisPassword)){
             onLoginSubmit(username);
-            navigate('/home');
+            navigate('/home ');
         }
 
     }

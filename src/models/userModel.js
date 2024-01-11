@@ -28,7 +28,8 @@ class UserModel {
                 username: "@CNN",
                 password: "1234",
                 profile:`${cnnLogo}`,
-                bannerProfile: `${cnnBanner}`
+                bannerProfile: `${cnnBanner}`,
+                isCertified: true
             },
             {
                 id:"2",
@@ -37,6 +38,7 @@ class UserModel {
                 password: "5236",
                 profile:`${nytLogo}`,
                 bannerProfile: `${nytBanner}`,
+                isCertified: true
             },
             {
                 id:"3",
@@ -45,6 +47,7 @@ class UserModel {
                 password: "7896",
                 profile:`${noProfileLogo}`,
                 bannerProfile: `${twitter1Banner}`,
+                isCertified: false
             },
             {
                 id:"4",
@@ -53,6 +56,7 @@ class UserModel {
                 password: "5698",
                 profile:`${noProfileLogo}`,
                 bannerProfile: `${twitter2Banner}`,
+                isCertified: false
             },
             {
                 id:"5",
@@ -61,6 +65,7 @@ class UserModel {
                 password: "2589",
                 profile:`${noProfileLogo}`,
                 bannerProfile: `${twitter3Banner}`,
+                isCertified: true
             }
         ]
         return userInformations;

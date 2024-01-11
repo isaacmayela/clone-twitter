@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import UserContext from '../../context/UserContext';
+import { useNavigate } from "react-router-dom";
 
-function TweetEditor() { 
+function TweetEditor() {
+
+    const user = useContext(UserContext);
+    const navigate = useNavigate();
+
+    if (!user.isLogged) {
+        navigate("/")
+    }
+
   return (
     <div className="tweet-editor">
       <div className='avatar'>
