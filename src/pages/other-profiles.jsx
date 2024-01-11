@@ -8,12 +8,14 @@ function OtherProfiles({imageUrl,children}) {
   const {username} = useParams();
 
   const data = UserModel.getUsers();
+  // console.log(data);
 
   const profile = data.find((profile) => profile.username === username )
+  // console.log(profile);
 
   return (
     <>
-        <ProfileComponent profileName={profile.profileName} bannerProfile={profile.bannerProfile} avatar={profile.profile} username={profile.username} />        
+      <ProfileComponent profileName={profile.profileName} bannerProfile={profile.bannerProfile} avatar={profile.profile} username={profile.username} />        
     </> 
   );
 }

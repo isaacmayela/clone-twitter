@@ -8,7 +8,7 @@ function Profile() {
   return (
     <main className="timeline">
 
-        <Outlet />
+      <Outlet />
 
     </main>
   );
