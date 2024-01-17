@@ -30,6 +30,11 @@
     padding: 0.7em;
     border-radius: 30px;
     margin-top: 2em;
+    font-weight: 500;
+}
+
+.color-green{
+    background-color: rgb(40, 152, 115) !important;
 }
 
 .profile-photo{

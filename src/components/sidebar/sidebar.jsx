@@ -51,7 +51,7 @@ function Sidebar() {
                 </div>
 
                 <div className="button-container">
-                    <a href="#" className="tweet-button" onClick={handleLogoutSubmit}>Logout</a>
+                    <a href="#" className="tweet-button color-green" onClick={handleLogoutSubmit}>Logout</a>
                 </div>
 
            </div>
