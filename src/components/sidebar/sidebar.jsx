@@ -9,6 +9,7 @@ import UserContext from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import UserModel from "../../models/userModel";
 import Authentication from "../../authentication/authentication";
+import UsefulFeatures from "../../utils/utils";
 
 function Sidebar() {
 
@@ -19,18 +20,7 @@ function Sidebar() {
         Authentication.logout(navigate)        
     }
 
-    const users = UserModel.getUsers()
-
-    if (!user.isLogged) {
-        navigate("/")
-    }
-
-    function findUser(username) {
-        const user = users.find((user) => user.username === username );
-        return user
-    }
-
-    const currentUser = findUser(user.userName)
+    const currentUser = UsefulFeatures.findUser(user.userName)
 
     return (
         <div className="sidebar">

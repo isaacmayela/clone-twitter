@@ -2,32 +2,48 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import UserContext from '../../context/UserContext';
-import { useNavigate } from "react-router-dom";
 import UserModel from '../../models/userModel';
 import TweetEditorButtons from '../tweet-editor-buttons/tweet-editor-buttons';
 import { useState } from "react";
+import GetPostLocalStorageDatas from '../../storage/localStorage';
+import UsefulFeatures from '../../utils/utils';
+
 
 function TweetEditor() {
 
   const [tweetMessage, setTweetMessage] = useState("");
 
   const user = useContext(UserContext);
-  const navigate = useNavigate();
 
-  if (!user.isLogged) {
-      navigate("/")
-  }
-
-  const users = UserModel.getUsers()
-
-  function findUser(username) {
-    const user = users.find((user) => user.username === username );
-    return user
-  }
-
-  const currentUser = findUser(user.userName)
+  const currentUser = UsefulFeatures.findUser(user.userName)
 
   const handlePostInput = () => {
+
+    const localStorageDatas = GetPostLocalStorageDatas.getData()
+
+    if(localStorageDatas){
+
+      if (tweetMessage) {
+        const tweetObject = {
+          "id":`${localStorageDatas.tweets.length + 1}`,
+          "username":`${currentUser.username}`,
+          "tweetText":`${tweetMessage}`,
+          "tweetImageUrl":"",
+          "reply":"0",
+          "retweet":"0",
+          "react":"0",
+          "time": `${UsefulFeatures.getTodayDate()}`
+        }
+
+        localStorageDatas.tweets.push(tweetObject)
+
+        GetPostLocalStorageDatas.postData(localStorageDatas)
+
+      }
+
+    }
+
+    console.log(localStorageDatas.tweets);
     
   }
 

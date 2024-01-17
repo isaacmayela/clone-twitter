@@ -14,6 +14,8 @@ import jsonDatas from './data/initial-data.json'
 
 function App() {
 
+  // localStorage.removeItem("tweeterLocalStorage")
+
   const twitterLocalstorage = GetPostLocalStorageDatas.getData()
 
   if (!twitterLocalstorage){

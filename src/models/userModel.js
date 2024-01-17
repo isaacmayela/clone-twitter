@@ -1,5 +1,3 @@
-// import TweetTitle from "./components/tweet-title/tweetTitle"
-// import TweeterActions from "./components/twitter-actions/twitterActions"
 import cnnBanner from "../images/paysages2.jpeg"
 import cnnLogo from "../images/image1.png"
 import nytBanner from "../images/paysages3.jpeg"
@@ -10,16 +8,6 @@ import twitter2Banner from "../images/paysages5.jpeg"
 import twitter3Banner from "../images/paysages6.jpeg"
 import bradleyProfile from "../images/profile-photo.png"
 import bradleyBanner from "../images/paysages.jpg"
-
-// import cnnBanner from "../images/paysages2.jpeg"
-// import cnnLogo from "../images/image1.png"
-// import nytBanner from "./images/paysages3.jpeg"
-// import nytLogo from "./images/image11.png"
-// import noProfileLogo from "./images/image12.png"
-// import twitter1Banner from "./images/paysages4.jpeg"
-// import twitter2Banner from "./images/paysages5.jpeg"
-// import twitter3Banner from "./images/paysages6.jpeg"
-
 
 class UserModel {
     static getUsers() {
