@@ -1,5 +1,9 @@
 {
-    "current-user": {}, 
+    "currentUser": {
+        "username": "",
+        "password":"",
+        "isLogged": false
+    }, 
     "tweets": [
         {
             "id":"1",

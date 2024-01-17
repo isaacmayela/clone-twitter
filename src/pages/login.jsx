@@ -3,25 +3,22 @@ import twitterLogo from '../images/Twitter_Logo_Blue.png'
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 import UserModel from '../models/userModel';
+import GetPostLocalStorageDatas from '../storage/localStorage'
+import jsonDatas from "../data/initial-data.json"
+import UserInformations from '../components/user-informations/userInformations';
+import Authentication from '../authentication/authentication';
 
-function Login({onLoginSubmit}) {
+function Login() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const navigate = useNavigate();
+    
+    const handleLoginSubmit = () =>{
 
-    const handleLoginSubmit = () => {
-        const users = UserModel.getUsers();
-
-        const hisUsername = users.find((user) => user.username === username );
-        const hisPassword = users.find((user) => user.password === password );
-
-        if (hisUsername && (hisUsername === hisPassword)){
-            onLoginSubmit(username);
-            navigate('/home');
-        }
-
+        Authentication.login(username, password, navigate)
+        
     }
 
     return (
@@ -46,47 +43,8 @@ function Login({onLoginSubmit}) {
             <div className='login-button-container'>
                 <a href='#'onClick={handleLoginSubmit}>Login</a>
             </div>
-            
-            <div className="box-infos">
-                <h3>informations sur les utilisateurs</h3>
-            <table>
-                <tr>
-                    <th>#</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>@CNN</td>
-                    <td>1234</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>@nytimes</td>
-                    <td>5236</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>@Twitter1</td>
-                    <td>7896</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>@Twitter2</td>
-                    <td>5698</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>@Twitter3</td>
-                    <td>2589</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>@Bradley</td>
-                    <td>0258</td>
-                </tr>
-            </table>
-            </div>
+
+            <UserInformations/>
 
         </div>
         </main>

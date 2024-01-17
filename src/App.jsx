@@ -9,31 +9,32 @@ import OtherProfiles from './pages/other-profiles';
 import Login from './pages/login';
 import('./style/reset.css');
 import('./style/App.css');
+import GetPostLocalStorageDatas from './storage/localStorage';
+import jsonDatas from './data/initial-data.json'
 
 function App() {
-    const [username, setPseudo] = useState(null);
 
-   const handleLoginSubmit = (userName) => {
-       setPseudo(userName);
-   };
+  const twitterLocalstorage = GetPostLocalStorageDatas.getData()
 
-    return (
-      <UserContext.Provider value={{ isLogged: true, userName: username }} >
-        <BrowserRouter>
-            <Routes>             
-                <Route path="/" element={<Login onLoginSubmit={handleLoginSubmit} />} />
-                <Route path="/" element={<Layout />}>
-                    <Route path='/home' element={<Home/>} />
-                    <Route path='/profile' element={<Profile/>}>
-                        <Route path='' element={<ProfileUsername/>} />
-                        <Route path=':username' element={<OtherProfiles/>} />
-                    </Route>
+  if (!twitterLocalstorage){
+    const JsonDatasCopy = JSON.parse(JSON.stringify(jsonDatas));
+    GetPostLocalStorageDatas.postData(JsonDatasCopy);
+  }
 
+  return (
+    <BrowserRouter>
+        <Routes>             
+            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Layout />}>
+              <Route path='/home' element={<Home/>} />
+              <Route path='/profile' element={<Profile/>}>
+                  <Route path='' element={<ProfileUsername/>} />
+                  <Route path=':username' element={<OtherProfiles/>} />
               </Route>
-            </Routes>
-        </BrowserRouter>
-      </UserContext.Provider>
-        )
+            </Route>
+        </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App

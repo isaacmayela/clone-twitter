@@ -8,11 +8,16 @@ import { useContext } from "react";
 import UserContext from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import UserModel from "../../models/userModel";
+import Authentication from "../../authentication/authentication";
 
 function Sidebar() {
 
     const user = useContext(UserContext);
     const navigate = useNavigate();
+
+    const handleLogoutSubmit = () =>{
+        Authentication.logout(navigate)        
+    }
 
     const users = UserModel.getUsers()
 
@@ -44,6 +49,11 @@ function Sidebar() {
                 <div className="button-container">
                     <a href="#" className="tweet-button">Tweet</a>
                 </div>
+
+                <div className="button-container">
+                    <a href="#" className="tweet-button" onClick={handleLogoutSubmit}>Logout</a>
+                </div>
+
            </div>
 
             <div className="profile-container">
