@@ -1,16 +1,21 @@
 import React from 'react';
 import twitterLogo from '../images/Twitter_Logo_Blue.png'
 import { useNavigate } from "react-router-dom"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import UserInformations from '../components/user-informations/userInformations';
 import Authentication from '../authentication/authentication';
 
 function Login() {
 
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        Authentication.navigateHome(navigate) 
+    });
+   
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
-    const navigate = useNavigate();
     
     const handleLoginSubmit = () =>{
 

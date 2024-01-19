@@ -24,11 +24,9 @@ class Authentication{
             }
         }
 
-        if (localStorageDatas.currentUser.isLogged === true) {
-            navigate('/home');
-        }
-
-        console.log("localStorageDatas: ", localStorageDatas.currentUser);
+        // if (localStorageDatas.currentUser.isLogged === true) {
+        //     navigate('/home');
+        // }
     
     }
 
@@ -44,6 +42,13 @@ class Authentication{
 
         navigate('/');
 
+    }
+
+    static navigateHome(navigate){
+        const localStorageDatas = GetPostLocalStorageDatas.getData()
+        if (localStorageDatas.currentUser.isLogged === true) {
+            navigate('/home');
+        }
     }
 }
 
