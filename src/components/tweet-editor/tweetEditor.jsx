@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import UserContext from '../../context/UserContext';
-import UserModel from '../../models/userModel';
 import TweetEditorButtons from '../tweet-editor-buttons/tweet-editor-buttons';
 import { useState } from "react";
-import GetPostLocalStorageDatas from '../../storage/localStorage';
 import UsefulFeatures from '../../utils/utils';
 
 
@@ -19,31 +17,7 @@ function TweetEditor() {
 
   const handlePostInput = () => {
 
-    const localStorageDatas = GetPostLocalStorageDatas.getData()
-
-    if(localStorageDatas){
-
-      if (tweetMessage) {
-        const tweetObject = {
-          "id":`${localStorageDatas.tweets.length + 1}`,
-          "username":`${currentUser.username}`,
-          "tweetText":`${tweetMessage}`,
-          "tweetImageUrl":"",
-          "reply":"0",
-          "retweet":"0",
-          "react":"0",
-          "time": `${UsefulFeatures.getTodayDate()}`
-        }
-
-        localStorageDatas.tweets.push(tweetObject)
-
-        GetPostLocalStorageDatas.postData(localStorageDatas)
-
-      }
-
-    }
-
-    console.log(localStorageDatas.tweets);
+    UsefulFeatures.addNewTweet(tweetMessage, currentUser)
     
   }
 

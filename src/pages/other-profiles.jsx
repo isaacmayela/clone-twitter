@@ -3,15 +3,13 @@ import ProfileComponent from '../components/profile-component/profileComponent';
 import UserModel from '../models/userModel';
 import Tweets from '../components/tweets/tweets';
 
-function OtherProfiles({imageUrl,children}) {
+function OtherProfiles() {
 
   const {username} = useParams();
 
   const data = UserModel.getUsers();
-  // console.log(data);
 
   const profile = data.find((profile) => profile.username === username )
-  // console.log(profile);
 
   return (
     <>

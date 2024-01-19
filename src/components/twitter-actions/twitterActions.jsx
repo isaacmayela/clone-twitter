@@ -1,11 +1,27 @@
 import React from 'react';
 import "./tweet-actions.css"
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import UsefulFeatures from '../../utils/utils';
+import { useContext } from 'react';
+import UserContext from '../../context/UserContext';
 
-function TweeterActions({reply, retweet, react}) {
+
+function TweeterActions({reply, retweet, react, tweetKey}) {
+
+  const curentuser = useContext(UserContext);
+
+  const handleTweetSubmit = () =>{
+
+
+    UsefulFeatures.likeTweet(tweetKey, curentuser.userName)
+
+    window.location.reload();
+    
+  }
+
   return (
     <>
-        <div className="tweet-action hover-reply">
+        <div className="tweet-action hover-react">
           <Link className='action-link' title='Reply'>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="50px" viewBox="0 0 49 50" version="1.1">
             <g id="surface1">
@@ -27,16 +43,18 @@ function TweeterActions({reply, retweet, react}) {
             <p>{retweet}</p>
           </Link>
         </div>
-        <div className="tweet-action hover-react">
-            <Link className="action-link" title='React'>
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="51px" viewBox="0 0 50 51" version="1.1">
-              <g id="surface1">
-              <path className= "path1" d="M 25 0.730469 C 38.808594 0.730469 50 11.820312 50 25.5 C 50 39.179688 38.808594 50.269531 25 50.269531 C 11.191406 50.269531 0 39.179688 0 25.5 C 0 11.820312 11.191406 0.730469 25 0.730469 Z M 25 0.730469 "/>
-              <path className= "path2" d="M 25 37.203125 L 24.984375 37.203125 C 21.816406 37.144531 12.683594 28.96875 12.683594 21.222656 C 12.683594 17.503906 15.777344 14.234375 19.304688 14.234375 C 22.113281 14.234375 24 16.15625 25 17.550781 C 25.996094 16.15625 27.882812 14.234375 30.691406 14.234375 C 34.21875 14.234375 37.3125 17.503906 37.3125 21.222656 C 37.3125 28.96875 28.179688 37.144531 25.011719 37.199219 L 25 37.199219 Z M 19.304688 16.058594 C 16.757812 16.058594 14.523438 18.472656 14.523438 21.226562 C 14.523438 28.195312 23.144531 35.304688 25 35.382812 C 26.863281 35.304688 35.480469 28.195312 35.480469 21.226562 C 35.480469 18.472656 33.246094 16.058594 30.695312 16.058594 C 27.597656 16.058594 25.867188 19.625 25.851562 19.660156 C 25.570312 20.339844 24.4375 20.339844 24.152344 19.660156 C 24.136719 19.621094 22.40625 16.058594 19.308594 16.058594 Z M 19.304688 16.058594 "/>
-              </g>
-              </svg>
+        <div className="tweet-action hover-reply">
+            <button type='submit' className="action-link" title='React' onClick={handleTweetSubmit}>
+
+              {
+                (Number(react) > 0) ? 
+                  <p className="icon likedIcon"><ion-icon name="heart"></ion-icon></p>
+                : 
+                <p className="icon hover-reply"><ion-icon name="heart-outline"></ion-icon></p>            
+                
+              }
               <p>{react}</p>
-            </Link>
+            </button>
         </div>
         <div className="tweet-action hover-react" title='Share'>
           <Link className="action-link">

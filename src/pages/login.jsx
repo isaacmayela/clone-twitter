@@ -2,9 +2,6 @@ import React from 'react';
 import twitterLogo from '../images/Twitter_Logo_Blue.png'
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
-import UserModel from '../models/userModel';
-import GetPostLocalStorageDatas from '../storage/localStorage'
-import jsonDatas from "../data/initial-data.json"
 import UserInformations from '../components/user-informations/userInformations';
 import Authentication from '../authentication/authentication';
 
@@ -41,7 +38,7 @@ function Login() {
             
             />
             <div className='login-button-container'>
-                <a href='#'onClick={handleLoginSubmit}>Login</a>
+                <a href='#' onClick={handleLoginSubmit}>Login</a>
             </div>
 
             <UserInformations/>

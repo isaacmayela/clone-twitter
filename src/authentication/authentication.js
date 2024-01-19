@@ -27,6 +27,8 @@ class Authentication{
         if (localStorageDatas.currentUser.isLogged === true) {
             navigate('/home');
         }
+
+        console.log("localStorageDatas: ", localStorageDatas.currentUser);
     
     }
 

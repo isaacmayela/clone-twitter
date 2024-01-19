@@ -1,6 +1,4 @@
-import {BrowserRouter, Routes, Route, Link, NavLink, Outlet, useParams} from 'react-router-dom';
-import { useState } from 'react';
-import UserContext from './context/UserContext';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Layout from './components/layout';
 import Home from './pages/home';
 import Profile from './pages/profile/profile';
@@ -14,7 +12,7 @@ import jsonDatas from './data/initial-data.json'
 
 function App() {
 
-  // localStorage.removeItem("tweeterLocalStorage")
+  localStorage.removeItem("tweeterLocalStorage")
 
   const twitterLocalstorage = GetPostLocalStorageDatas.getData()
 
