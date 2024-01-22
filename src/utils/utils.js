@@ -12,6 +12,27 @@ class UsefulFeatures{
     
     }
 
+    // static getRalativeDate(time){
+    //     let today = new Date ();
+
+    //     const differenceEnSecondes = Math.floor((today - time) / 1000);
+
+    //     let tempsRelatif = '';
+
+    //     if (differenceEnSecondes < 60) {
+    //     tempsRelatif = 'Now';
+    //     } else if (differenceEnSecondes < 3600) {
+    //     const minutes = Math.floor(differenceEnSecondes / 60);
+    //     tempsRelatif = `Il y a ${minutes} minute${minutes > 1 ? 's' : ''}`;
+    //     } else if (differenceEnSecondes < 86400) {
+    //     const heures = Math.floor(differenceEnSecondes / 3600);
+    //     tempsRelatif = `Il y a ${heures} heure${heures > 1 ? 's' : ''}`;
+    //     } else {
+    //     const jours = Math.floor(differenceEnSecondes / 86400);
+    //     tempsRelatif = `Il y a ${jours} jour${jours > 1 ? 's' : ''}`;
+    //     }
+    //     }
+
     static addNewTweet(message, currentUser) {
         const localStorageDatas = GetPostLocalStorageDatas.getData()
 
@@ -29,25 +50,46 @@ class UsefulFeatures{
             "time": `${UsefulFeatures.getTodayDate()}`
             }
 
-            localStorageDatas.tweets.push(tweetObject)
+            localStorageDatas.tweets.unshift(tweetObject)
 
-            GetPostLocalStorageDatas.postData(localStorageDatas)
+            const event = new CustomEvent("tweetChanged", {
+                detail: localStorageDatas,
+            });
 
+            GetPostLocalStorageDatas.postData(event.detail)
+
+            window.dispatchEvent(event);
         }
 
         }
     
     }
 
-    static getTweets(username){
-        const listOfTweets = GetPostLocalStorageDatas.getData().tweets
-        // console.log(listOfTweets);
+    static filterTweets(listOfTweets, username){
 
         if (username){
             return listOfTweets.filter((tweets) => tweets.username === username)
         }
       
         return listOfTweets
+    }
+
+    static getUpdateListOfTweet(useState, useEffect){
+        const [tweetsData, setTweetsData] = useState(
+            GetPostLocalStorageDatas.getData() || ""
+        );
+        
+        useEffect(() => {
+            function handleTweetChange(e) {
+            setTweetsData(e.detail);
+            }
+            window.addEventListener("tweetChanged", handleTweetChange);
+            return () => {
+            window.removeEventListener("tweetChanged", handleTweetChange);
+            };
+        }, []);
+
+        return tweetsData.tweets
     }
 
     static findUser(username){
@@ -93,7 +135,12 @@ class UsefulFeatures{
         if (!liker){
             tweet.likeersList.push(username)
             tweet.react = `${Number(tweet.react) + 1}`
-            GetPostLocalStorageDatas.postData(storageDatas)
+            const event = new CustomEvent("tweetChanged", {
+                detail: storageDatas,
+            });
+            GetPostLocalStorageDatas.postData(event.detail)
+
+            window.dispatchEvent(event);
         }
 
         if (liker){
@@ -101,9 +148,48 @@ class UsefulFeatures{
             if (Number(tweet.react) > 0){
                 tweet.react = `${Number(tweet.react) - 1}`
             }
-            GetPostLocalStorageDatas.postData(storageDatas)
+
+            const event = new CustomEvent("tweetChanged", {
+                detail: storageDatas,
+            });
+            GetPostLocalStorageDatas.postData(event.detail)
+
+            window.dispatchEvent(event);
+
         }
 
+    }
+
+    static checkIfCurrentUserHaveTweet(tweetKey, username){
+        const storageDatas = GetPostLocalStorageDatas.getData()
+        const listOfTweets = storageDatas.tweets
+        const tweet  = UsefulFeatures.findTweet(listOfTweets,tweetKey)
+        const likeersList = tweet.likeersList
+
+        const liker = likeersList.includes(username)
+
+        if (liker){
+            return true
+        }
+        return false
+    }
+
+    static updateLike(){
+        const [tweetsData, setTweetsData] = useState(
+            GetPostLocalStorageDatas.getData() || ""
+        );
+        
+        useEffect(() => {
+            function handleTweetChange(e) {
+            setTweetsData(e.detail);
+            }
+            window.addEventListener("tweetChanged", handleTweetChange);
+            return () => {
+            window.removeEventListener("tweetChanged", handleTweetChange);
+            };
+        }, []);
+
+        return tweetsData.tweets
     }
 
 }

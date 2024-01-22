@@ -142,19 +142,19 @@ body{
 .hover-reply .action-link:hover, .hover-reply .action-link:focus {
     color: rgb(249, 24, 128);
     stroke: rgb(249, 24, 128);
-    fill: rgb(249, 24, 128);
+    fill: rgb(248, 139, 190);
 }
 
 .hover-retweet .action-link:hover, .hover-retweet .action-link:focus{
     color: rgb(0, 186, 124);
     stroke: rgb(0, 186, 124);
-    fill: rgb(0, 186, 124);
+    fill: rgb(28, 59, 50);
 }
 
 .hover-react .action-link:hover, .hover-react .action-link:focus{
     color: rgb(29, 155, 240);
     stroke: rgb(29, 155, 240);
-    fill: rgb(29, 155, 240);
+    fill: rgb(40, 63, 81);
 }
 
 .sidebar{

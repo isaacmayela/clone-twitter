@@ -15,10 +15,10 @@ function TweetEditor() {
 
   const currentUser = UsefulFeatures.findUser(user.userName)
 
-  const handlePostInput = () => {
-
+  const handlePostInput = (e) => {
+    e.preventDefault()
     UsefulFeatures.addNewTweet(tweetMessage, currentUser)
-    
+    setTweetMessage("")
   }
 
   return (

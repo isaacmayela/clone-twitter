@@ -1,7 +1,7 @@
 .path1{
     stroke:none;
     fill-rule:nonzero;
-    fill:rgb(0%,0%,0%);
+    /* fill:rgb(0%,0%,0%); */
     fill-opacity:1;
 }
 
@@ -16,9 +16,18 @@
 
 .icon{
     font-size: 1.3em;
-
+    width: 1.7em;
+    height: 1.7em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon:hover{
+    background-color: rgb(75, 36, 54);
 }
 
 .likedIcon{
     color: rgb(249, 24, 128);
 }
+
