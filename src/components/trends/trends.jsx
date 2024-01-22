@@ -11,7 +11,7 @@ function Trends() {
           <SearchComponent />
           <TrendsDescription />
           <Chanels />
-          <p className="last-description">Terms of services Privacy Policy Cookie Policy Inprint Add info More @2021 Twitter, Inc</p>
+          <p className="text-blue-600">Terms of services Privacy Policy Cookie Policy Inprint Add info More @2021 Twitter, Inc</p>
         </div>
       </>
     );
