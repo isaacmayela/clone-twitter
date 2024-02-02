@@ -1,3 +1,5 @@
+import axios from "axios";
+
 class GetPostLocalStorageDatas{
     static getData() {
         const datas = localStorage.getItem("tweeterLocalStorage")
@@ -11,6 +13,16 @@ class GetPostLocalStorageDatas{
     static postData(data) {
         const json = JSON.stringify(data);
         localStorage.setItem("tweeterLocalStorage", json);
+    }
+
+    static async getTweets(){
+        try{
+            const response = await axios.get("https://65bbaeb852189914b5bcdd06.mockapi.io/tweeter/tweets")
+            return response
+        }
+        catch(error){
+            return error
+        }
     }
 }
 
