@@ -9,7 +9,7 @@ import UsefulFeatures from '../../utils/utils';
 
 function Tweet({username,profileName, avatar, tweetText, image, reply, retweet, react, time, tweetKey }) {
 
-    UsefulFeatures.addLikersListFeature(tweetKey)
+    // UsefulFeatures.addLikersListFeature(tweetKey)
     
     const Curentuser = useContext(UserContext);
 

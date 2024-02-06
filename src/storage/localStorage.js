@@ -18,9 +18,10 @@ class GetPostLocalStorageDatas{
     static async getTweets(){
         try{
             const response = await axios.get("https://65bbaeb852189914b5bcdd06.mockapi.io/tweeter/tweets")
-            return response
+            return response.data
         }
         catch(error){
+            console.log(error);
             return error
         }
     }

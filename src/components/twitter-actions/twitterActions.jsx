@@ -48,7 +48,7 @@ function TweeterActions({reply, retweet, react, tweetKey}) {
             <button type='submit' className="action-link" title='React' onClick={handleTweetSubmit}>
 
               {
-                ((Number(react) > 0) && currentUserHaveTweet) ? 
+                ((react > 0) && currentUserHaveTweet) ? 
                   <p className="icon likedIcon"><ion-icon name="heart"></ion-icon></p>
                 : 
                 <p className="icon hover-reply"><ion-icon name="heart-outline"></ion-icon></p>            
