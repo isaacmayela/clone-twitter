@@ -42,6 +42,8 @@ function TweetForm() {
             }>
             </textarea> */}
 
+            <div>My paragraph</div>
+
             <ErrorMessage/>
 
             <div className='tweet-editor-buttons'>
