@@ -76,10 +76,11 @@ body{
 
 .tweet-editor-form {
     flex: auto;
+    /* background-color: #6E767D; */
 }
 
 .tweet-editor-input {
-    height: 60px;
+    height: auto;
     width: 100%;
     border: none;
     outline: none;
@@ -89,6 +90,8 @@ body{
     resize: none;
     padding: 10px 0 0 0;
     margin: 13px 0;
+    resize: none;
+    /* background-color: #1D9BF0; */
 }
 
 .tweet-editor-buttons {

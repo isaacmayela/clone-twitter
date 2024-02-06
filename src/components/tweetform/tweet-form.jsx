@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TweetEditorButtons from "../tweet-editor-buttons/tweet-editor-buttons";
 import { useForm } from "react-hook-form";
+import ErrorMessage from "../erromessage/error-message";
 
 function TweetForm() {
 
@@ -34,11 +35,20 @@ function TweetForm() {
                 (e) => setTweetMessage(e.target.value)
             }
             />
+            {/* <textarea type="text" placeholder="What's happening ?" className='tweet-editor-input'
+            value={tweetMessage}
+            onChange={
+                (e) => setTweetMessage(e.target.value)
+            }>
+            </textarea> */}
+
+            <ErrorMessage/>
+
             <div className='tweet-editor-buttons'>
-            <div className='tweet-editor-actions'>
-                <TweetEditorButtons/>
-            </div>
-            <button className='button' type="submit">Tweet</button>
+                <div className='tweet-editor-actions'>
+                    <TweetEditorButtons/>
+                </div>
+                <button className='button' type="submit">Tweet</button>
             </div>
         </form>
   );
