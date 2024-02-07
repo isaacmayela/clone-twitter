@@ -204,9 +204,9 @@ class UsefulFeatures{
         if (text.length > 180 || isButtonDisable){
             buttonState.state = true
             buttonState.style = {
-                backgroundColor: isButtonDisable && '#124e78',
-                color: isButtonDisable && '#666',
-                cursor: isButtonDisable && 'default',
+                backgroundColor: '#124e78',
+                color: '#666',
+                cursor: 'default',
             }
         }
 
@@ -217,12 +217,27 @@ class UsefulFeatures{
         const validations = {
             required: true,
             maxLength:{
-                value: 4,
+                value: 180,
                 message: "Votre tweet est trop long !"
             }
         }
 
         return validations
+    }
+
+    static getObjectTobePosted(obj){
+        const data = {
+            username: "@CNN",
+            tweetText: obj.tweet,
+            tweetImageUrl: obj.tweetImageUrl,
+            reply: 0,
+            retweet: 0,
+            react: 0,
+            time: UsefulFeatures.getTodayDate(),
+            likersList: []
+        }
+
+        return data
     }
 
 }
