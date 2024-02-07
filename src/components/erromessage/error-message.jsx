@@ -4,7 +4,7 @@ function ErrorMessage({message}) {
 
     return (
         <div className='error-container'>
-            <p>i love you !</p>
+            <p>{message}</p>
         </div>
   );
 }

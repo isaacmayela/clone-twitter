@@ -192,6 +192,39 @@ class UsefulFeatures{
         return tweetsData.tweets
     }
 
+    static disableSubmitButton(text){
+
+        const isButtonDisable = text.trim() === '';
+
+        let buttonState = {
+            state: false,
+            style: {}
+        }
+
+        if (text.length > 180 || isButtonDisable){
+            buttonState.state = true
+            buttonState.style = {
+                backgroundColor: isButtonDisable && '#124e78',
+                color: isButtonDisable && '#666',
+                cursor: isButtonDisable && 'default',
+            }
+        }
+
+        return buttonState
+    }
+
+    static validations(){
+        const validations = {
+            required: true,
+            maxLength:{
+                value: 4,
+                message: "Votre tweet est trop long !"
+            }
+        }
+
+        return validations
+    }
+
 }
 
 export default UsefulFeatures

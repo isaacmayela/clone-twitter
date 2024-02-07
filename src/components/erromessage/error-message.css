@@ -2,4 +2,12 @@
     background-color: #3d0105;
     padding: 0.5em;
     border-radius: 5px;
+    margin-bottom: 1em;
+    font-weight: 100;
+}
+
+.error-container p{
+    color: #fff;
+    font-weight: 300;
+    font-size: 0.95em;
 }

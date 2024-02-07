@@ -2,6 +2,7 @@ import { useState } from "react";
 import TweetEditorButtons from "../tweet-editor-buttons/tweet-editor-buttons";
 import { useForm } from "react-hook-form";
 import ErrorMessage from "../erromessage/error-message";
+import UsefulFeatures from "../../utils/utils";
 
 function TweetForm() {
 
@@ -9,13 +10,15 @@ function TweetForm() {
         tweet: ""
     })
 
-    const {register, handleSubmit, formState:{errors}} = useForm({defaultValues: formData})
+    const {register, handleSubmit, watch, formState:{errors}} = useForm({defaultValues: formData, mode: 'onChange'});
 
     const onSubmit = (data) =>{
         
     }
 
-    const [tweetMessage, setTweetMessage] = useState("");
+    const inputValue = watch("tweet")
+
+    const buttonState = UsefulFeatures.disableSubmitButton(inputValue)
 
   // const user = useContext(UserContext);
 
@@ -30,11 +33,19 @@ function TweetForm() {
     return (
         <form className='tweet-editor-form'>
             <input type="text" placeholder="What's happening ?" className='tweet-editor-input'
-            value={tweetMessage}
-            onChange={
-                (e) => setTweetMessage(e.target.value)
+            name="tweet"
+            {
+                ...register("tweet",UsefulFeatures.validations())
             }
             />
+            {
+                (errors.tweet && inputValue.length > 0) ?(
+                    <ErrorMessage message={errors.tweet.message}/>
+                ):""
+                // errors.tweet &&(
+                //     <ErrorMessage message={errors.tweet.message}/>
+                // )
+            }
             {/* <textarea type="text" placeholder="What's happening ?" className='tweet-editor-input'
             value={tweetMessage}
             onChange={
@@ -42,15 +53,11 @@ function TweetForm() {
             }>
             </textarea> */}
 
-            <div>My paragraph</div>
-
-            <ErrorMessage/>
-
             <div className='tweet-editor-buttons'>
                 <div className='tweet-editor-actions'>
                     <TweetEditorButtons/>
                 </div>
-                <button className='button' type="submit">Tweet</button>
+                <button className='button' type="submit" style={buttonState.style} disabled={buttonState.state}>Tweet</button>
             </div>
         </form>
   );
