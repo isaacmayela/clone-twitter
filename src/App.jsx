@@ -7,22 +7,25 @@ import OtherProfiles from './pages/other-profiles';
 import Login from './pages/login';
 import('./style/reset.css');
 import('./style/App.css');
-import GetPostLocalStorageDatas from './storage/localStorage';
-import jsonDatas from './data/initial-data.json'
+import { useState } from 'react';
+import UserContext from './context/UserContext';
+import { getCurrentUser } from './requests/requests';
+import { useEffect } from 'react';
 
 function App() {
 
-  // localStorage.removeItem("tweeterLocalStorage")
+  const [currentUser, setCurrentUser] = useState(getCurrentUser())
 
-  const twitterLocalstorage = GetPostLocalStorageDatas.getData()
+  // const twitterLocalstorage = GetPostLocalStorageDatas.getData()
 
-  if (!twitterLocalstorage){
-    const JsonDatasCopy = JSON.parse(JSON.stringify(jsonDatas));
-    GetPostLocalStorageDatas.postData(JsonDatasCopy);
-  }
-
+  // if (!twitterLocalstorage){
+  //   const JsonDatasCopy = JSON.parse(JSON.stringify(jsonDatas));
+  //   GetPostLocalStorageDatas.postData(JsonDatasCopy);
+  // }
+  
   return (
-    <BrowserRouter>
+    <UserContext.Provider value={{ currentUser, setCurrentUser }} >
+      <BrowserRouter>
         <Routes>             
             <Route path="/" element={<Login />} />
             <Route path="/" element={<Layout />}>
@@ -33,7 +36,8 @@ function App() {
               </Route>
             </Route>
         </Routes>
-    </BrowserRouter>
+        </BrowserRouter>
+    </UserContext.Provider>
   )
 }
 

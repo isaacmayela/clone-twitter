@@ -11,31 +11,33 @@ function Tweet({username,profileName, avatar, tweetText, image, reply, retweet, 
 
     // UsefulFeatures.addLikersListFeature(tweetKey)
     
-    const Curentuser = useContext(UserContext);
+    // const Curentuser = useContext(UserContext);
+    const { currentUser, setCurrentUser } = useContext(UserContext);
+
 
     return (
         <>
             <div className='flex justify-start items-start gap-5 px-4 py-6 border-b-[#2F3336] border-b border-solid'> 
                 <div className='flex-[0_0_70px]'>
 
-                {
-                    Curentuser.userName === username ? 
-                        <Link to={"/profile"}>
-                        <img src={avatar} alt="tweet avatar" className='max-w-full max-h-[100px] rounded-[100%]' />
-                        </Link>
-                    : 
-                    <Link to={`/profile/${username}`}>
-                        <img src={avatar} alt="tweet avatar" className='max-w-full max-h-[100px] rounded-[100%]'/>
-                    </Link>              
-                
-                }
+                    {
+                        currentUser.username === username ? 
+                            <Link to={"/profile"}>
+                            <img src={avatar} alt="tweet avatar" className='max-w-full max-h-[100px] rounded-[100%]' />
+                            </Link>
+                        : 
+                        <Link to={`/profile/${username}`}>
+                            <img src={avatar} alt="tweet avatar" className='max-w-full max-h-[100px] rounded-[100%]'/>
+                        </Link>              
+                    
+                    }
                 </div>
                 <div className='flex flex-col items-start justify-start gap-[30px] w-full'>
-                    <div className='flex flex-col gap-2'>
+                    <div className='w-full flex flex-col gap-2'>
                         <div className="flex justify-start items-start gap-2.5 text-base">
                             <TweetTitle author={profileName} username={username} time={time}/>
                         </div>
-                        <p className="text-[#D9D9D9] text-base">{tweetText}</p>
+                        <p className="text-[#D9D9D9] text-base break-all">{tweetText}</p>
                         <div className="w-full pt-[0.3rem] pb-0 px-0">
                             {image ? <img src={image} alt="tweet image" className='w-full max-w-full h-auto border rounded-[50px] border-[#2F3336] border-solid'/> : ""}
                         </div>

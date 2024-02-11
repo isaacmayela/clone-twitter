@@ -65,13 +65,24 @@ class UsefulFeatures{
     
     }
 
-    static filterTweets(listOfTweets, username){
+    // static filterTweets(listOfTweets, username){
+
+    //     if (username){
+    //         return listOfTweets.filter((tweets) => tweets.username === username)
+    //     }
+      
+    //     return listOfTweets
+    // }
+
+    static filterAndReverseTweets(listOfTweets, username){
+
+        const reversed = [...listOfTweets].reverse()
 
         if (username){
-            return listOfTweets.filter((tweets) => tweets.username === username)
+            return reversed.filter((tweets) => tweets.username === username)
         }
       
-        return listOfTweets
+        return reversed
     }
 
     static getUpdateListOfTweet(useState, useEffect){
@@ -124,47 +135,59 @@ class UsefulFeatures{
         }
     }
 
-    static likeTweet(tweetKey, username){
-        const storageDatas = GetPostLocalStorageDatas.getData()
-        const listOfTweets = storageDatas.tweets
-        const tweet  = UsefulFeatures.findTweet(listOfTweets,tweetKey)
-        const likeersList = tweet.likeersList
+    // static likeTweet(tweetKey, username){
+        // const storageDatas = GetPostLocalStorageDatas.getData()
+        // const listOfTweets = storageDatas.tweets
+        // const tweet  = UsefulFeatures.findTweet(listOfTweets,tweetKey)
+        // const likeersList = tweet.likeersList
 
-        const liker = likeersList.includes(username)
+        // const liker = likeersList.includes(username)
 
-        if (!liker){
-            tweet.likeersList.push(username)
-            tweet.react = `${Number(tweet.react) + 1}`
-            const event = new CustomEvent("tweetChanged", {
-                detail: storageDatas,
-            });
-            GetPostLocalStorageDatas.postData(event.detail)
+        // if (!liker){
+        //     tweet.likeersList.push(username)
+        //     tweet.react = `${Number(tweet.react) + 1}`
+        //     const event = new CustomEvent("tweetChanged", {
+        //         detail: storageDatas,
+        //     });
+        //     GetPostLocalStorageDatas.postData(event.detail)
 
-            window.dispatchEvent(event);
-        }
+        //     window.dispatchEvent(event);
+        // }
 
-        if (liker){
-            UsefulFeatures.removeUserToLikeersList(tweet.likeersList, username)
-            if (Number(tweet.react) > 0){
-                tweet.react = `${Number(tweet.react) - 1}`
-            }
+        // if (liker){
+        //     UsefulFeatures.removeUserToLikeersList(tweet.likeersList, username)
+        //     if (Number(tweet.react) > 0){
+        //         tweet.react = `${Number(tweet.react) - 1}`
+        //     }
 
-            const event = new CustomEvent("tweetChanged", {
-                detail: storageDatas,
-            });
-            GetPostLocalStorageDatas.postData(event.detail)
+        //     const event = new CustomEvent("tweetChanged", {
+        //         detail: storageDatas,
+        //     });
+        //     GetPostLocalStorageDatas.postData(event.detail)
 
-            window.dispatchEvent(event);
+        //     window.dispatchEvent(event);
 
-        }
+        // }
 
-    }
+    // }
 
-    static checkIfCurrentUserHaveTweet(tweetKey, username){
-        const storageDatas = GetPostLocalStorageDatas.getData()
-        const listOfTweets = storageDatas.tweets
-        const tweet  = UsefulFeatures.findTweet(listOfTweets,tweetKey)
-        const likeersList = tweet.likeersList
+    // static checkIfCurrentUserHaveTweet(tweetKey, username){
+    //     const storageDatas = GetPostLocalStorageDatas.getData()
+    //     const listOfTweets = storageDatas.tweets
+    //     const tweet  = UsefulFeatures.findTweet(listOfTweets,tweetKey)
+    //     const likeersList = tweet.likeersList
+
+    //     const liker = likeersList.includes(username)
+
+    //     if (liker){
+    //         return true
+    //     }
+    //     return false
+    // }
+
+    static checkIfCurrentUserHaveTweet(tweetArray,tweetKey, username){
+        const tweet  = UsefulFeatures.findTweet(tweetArray,tweetKey)
+        const likeersList = tweet.likersList
 
         const liker = likeersList.includes(username)
 
@@ -174,23 +197,23 @@ class UsefulFeatures{
         return false
     }
 
-    static updateLike(){
-        const [tweetsData, setTweetsData] = useState(
-            GetPostLocalStorageDatas.getData() || ""
-        );
+    // static updateLike(){
+    //     const [tweetsData, setTweetsData] = useState(
+    //         GetPostLocalStorageDatas.getData() || ""
+    //     );
         
-        useEffect(() => {
-            function handleTweetChange(e) {
-            setTweetsData(e.detail);
-            }
-            window.addEventListener("tweetChanged", handleTweetChange);
-            return () => {
-            window.removeEventListener("tweetChanged", handleTweetChange);
-            };
-        }, []);
+    //     useEffect(() => {
+    //         function handleTweetChange(e) {
+    //         setTweetsData(e.detail);
+    //         }
+    //         window.addEventListener("tweetChanged", handleTweetChange);
+    //         return () => {
+    //         window.removeEventListener("tweetChanged", handleTweetChange);
+    //         };
+    //     }, []);
 
-        return tweetsData.tweets
-    }
+    //     return tweetsData.tweets
+    // }
 
     static disableSubmitButton(text){
 
@@ -218,26 +241,47 @@ class UsefulFeatures{
             required: true,
             maxLength:{
                 value: 180,
-                message: "Votre tweet est trop long !"
+                message: "Votre tweet ne doit pas depasser 180 caractères !"
             }
         }
 
         return validations
     }
 
-    static getObjectTobePosted(obj){
+    static getObjectTobePosted(obj,username, id){
         const data = {
-            username: "@CNN",
+            username: username,
             tweetText: obj.tweet,
             tweetImageUrl: obj.tweetImageUrl,
             reply: 0,
             retweet: 0,
             react: 0,
             time: UsefulFeatures.getTodayDate(),
-            likersList: []
+            likersList: [],
         }
 
         return data
+    }
+
+    static handleLike(tweetKey, tweetList, username){
+        const tweet  = UsefulFeatures.findTweet(tweetList,tweetKey)
+        const likersList = tweet.likersList
+
+        const liker = likersList.includes(username)
+
+        if (!liker){
+            tweet.likersList.push(username)
+            tweet.react += 1
+            return tweet
+        }
+
+        if (liker){
+            UsefulFeatures.removeUserToLikeersList(tweet.likersList, username)
+            if (Number(tweet.react) > 0){
+                tweet.react -= 1
+            }
+            return tweet
+        }
     }
 
 }

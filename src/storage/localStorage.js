@@ -14,17 +14,6 @@ class GetPostLocalStorageDatas{
         const json = JSON.stringify(data);
         localStorage.setItem("tweeterLocalStorage", json);
     }
-
-    static async getTweets(){
-        try{
-            const response = await axios.get("https://65bbaeb852189914b5bcdd06.mockapi.io/tweeter/tweets")
-            return response.data
-        }
-        catch(error){
-            console.log(error);
-            return error
-        }
-    }
 }
 
 export default GetPostLocalStorageDatas

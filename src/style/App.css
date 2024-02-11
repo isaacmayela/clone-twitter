@@ -79,19 +79,22 @@ body{
 }
 
 .tweet-editor-input {
-    height: auto;
+    /* height: auto; */
     width: 100%;
     border: none;
     outline: none;
     font-size: 1.3rem;
     background-color: black;
     color: white;
-    resize: none;
+    /* resize: none; */
     padding: 10px 0 0 0;
     margin: 13px 0;
     resize: none;
     /* background-color: #1D9BF0; */
 }
+.tweet-editor-input::-webkit-scrollbar {
+    width: 0px;
+  }
 
 .tweet-editor-buttons {
     display: flex;

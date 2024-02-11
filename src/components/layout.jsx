@@ -1,19 +1,23 @@
 import React from 'react';
 import Sidebar from './sidebar/sidebar';
 import Trends from './trends/trends';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { getTweets } from '../requests/requests';
+import TweetContext from '../context/tweet-context';
+import { useState, useEffect } from 'react';
 import UserContext from '../context/UserContext';
-import GetPostDatas from '../storage/localStorage';
-
+import { useContext } from 'react';
+import Authentication from '../authentication/authentication';
 
 function Layout({children}) {
 
-    const newLocalStorageDatas = GetPostDatas.getData();
+    const { currentUser, setCurrentUser } = useContext(UserContext)
+    const navigate = useNavigate();
 
-    const currentUser = newLocalStorageDatas.currentUser;
+    const [tweetArray, setTweetArray] = useState(getTweets())
 
     return (
-        <UserContext.Provider value={{ isLogged: currentUser.isLogged, userName: currentUser.username }} >
+        <TweetContext.Provider value={{tweetArray, setTweetArray}}>
             <>
                 <Sidebar />
                 
@@ -22,7 +26,7 @@ function Layout({children}) {
                 <Trends />
         
             </>
-        </UserContext.Provider>
+        </TweetContext.Provider>
     );
 }
 

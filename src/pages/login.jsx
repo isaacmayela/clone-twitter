@@ -4,24 +4,37 @@ import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react";
 import UserInformations from '../components/user-informations/userInformations';
 import Authentication from '../authentication/authentication';
+import { useContext } from 'react';
+import UserContext from '../context/UserContext';
 
 function Login() {
 
+    const { currentUser, setCurrentUser } = useContext(UserContext)
+
     const navigate = useNavigate();
 
+    // useEffect(() => {
+    //     Authentication.navigateHome(navigate) 
+    // });
+
     useEffect(() => {
-        Authentication.navigateHome(navigate) 
-    });
-   
+        Authentication.navigation(currentUser.isLogged, navigate) 
+    }, [currentUser.isLogged, navigate]);
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
     const handleLoginSubmit = () =>{
 
-        Authentication.login(username, password, navigate)
+        Authentication.useAuthenticated(username, password, navigate, currentUser, setCurrentUser)
         
     }
+
+    // const handleLoginSubmit = () =>{
+
+    //     Authentication.login(username, password, navigate)
+        
+    // }
 
     return (
         <main className="login-container">

@@ -8,16 +8,19 @@ import UsefulFeatures from "../utils/utils";
 
 function ProfileUsername() { 
 
-  const user = useContext(UserContext);
+  // const user = useContext(UserContext);
 
-  const currentUser = UsefulFeatures.findUser(user.userName)
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+
+
+  const user = UsefulFeatures.findUser(currentUser.username)
 
   return (
     <>
 
-        <ProfileComponent profileName={currentUser.profileName} bannerProfile={currentUser.bannerProfile} avatar={currentUser.profile} username={currentUser.username} />
+        <ProfileComponent profileName={user.profileName} bannerProfile={user.bannerProfile} avatar={user.profile} username={user.username} />
         
-        <Tweets username={user.userName}/>
+        <Tweets username={user.username}/>
     </> 
   );
 }

@@ -4,21 +4,29 @@ import { Link } from 'react-router-dom';
 import UsefulFeatures from '../../utils/utils';
 import { useContext } from 'react';
 import UserContext from '../../context/UserContext';
+import TweetContext from '../../context/tweet-context';
+import { updateLike } from '../../requests/requests';
 
 
 function TweeterActions({reply, retweet, react, tweetKey}) {
 
-  const curentuser = useContext(UserContext);
+  // const curentuser = useContext(UserContext);
 
-  const handleTweetSubmit = () =>{
+  const {currentUser, setCurrentUser} = useContext(UserContext);
+  const { tweetArray, setTweetArray } = useContext(TweetContext)
 
-    UsefulFeatures.likeTweet(tweetKey, curentuser.userName)
+  // console.log(tweetArray);
 
-    // window.location.reload();
-    
+  const handleLikeSubmit = () =>{
+
+    // UsefulFeatures.likeTweet(tweetKey, curentuser.userName)
+
+    updateLike(currentUser.username, tweetArray, setTweetArray, tweetKey)     
   }
 
-  let currentUserHaveTweet = UsefulFeatures.checkIfCurrentUserHaveTweet(tweetKey, curentuser.userName)
+  // let currentUserHaveTweet = UsefulFeatures.checkIfCurrentUserHaveTweet(tweetKey, curentuser.userName)
+
+  let currentUserHaveTweet = UsefulFeatures.checkIfCurrentUserHaveTweet(tweetArray, tweetKey, currentUser.username)
 
   return (
     <>
@@ -45,7 +53,7 @@ function TweeterActions({reply, retweet, react, tweetKey}) {
           </Link>
         </div>
         <div className="tweet-action hover-reply">
-            <button type='submit' className="action-link" title='React' onClick={handleTweetSubmit}>
+            <button type='submit' className="action-link" title='React' onClick={handleLikeSubmit}>
 
               {
                 ((react > 0) && currentUserHaveTweet) ? 
@@ -54,6 +62,8 @@ function TweeterActions({reply, retweet, react, tweetKey}) {
                 <p className="icon hover-reply"><ion-icon name="heart-outline"></ion-icon></p>            
                 
               }
+
+              {/* <p className="icon hover-reply"><ion-icon name="heart-outline"></ion-icon></p>  */}
               <p>{react}</p>
             </button>
         </div>

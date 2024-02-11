@@ -9,15 +9,15 @@ import TweetForm from '../tweetform/tweet-form';
 
 function TweetEditor() {
 
-  const user = useContext(UserContext);
-  const currentUser = UsefulFeatures.findUser(user.userName)
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const user = UsefulFeatures.findUser(currentUser.username)
 
   return (
     <div className="tweet-editor">
       <div className='avatar'>
-      <Link to="/profile">
-        <img src={currentUser.profile} alt="profile photo"/>
-      </Link>
+        <Link to="/profile">
+          <img src={user.profile} alt="profile photo"/>
+        </Link>
       </div>
       <TweetForm/>
     </div>

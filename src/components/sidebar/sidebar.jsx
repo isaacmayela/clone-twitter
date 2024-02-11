@@ -7,20 +7,21 @@ import moreIcon from "../../images/More-2.png"
 import { useContext } from "react";
 import UserContext from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import UserModel from "../../models/userModel";
 import Authentication from "../../authentication/authentication";
 import UsefulFeatures from "../../utils/utils";
 
 function Sidebar() {
 
-    const user = useContext(UserContext);
+    // const user = useContext(UserContext);
+
+    const { currentUser, setCurrentUser } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleLogoutSubmit = () =>{
-        Authentication.logout(navigate)        
+        Authentication.logout(navigate, currentUser, setCurrentUser)        
     }
 
-    const currentUser = UsefulFeatures.findUser(user.userName)
+    const user = UsefulFeatures.findUser(currentUser.username)
 
     return (
         <div className="sidebar">
@@ -49,14 +50,14 @@ function Sidebar() {
             <div className="profile-container">
                 <div className="profile-container">
                     <Link to="/profile">
-                        <img src={currentUser.profile} alt="profile" className="profile-photo"/>
+                        <img src={user.profile} alt="profile" className="profile-photo"/>
                     </Link>
                     <div className="profile">
                         <div className="editor">
-                            <h6>{currentUser.profileName}</h6>
+                            <h6>{user.profileName}</h6>
                             <img src="src/images/Private.png" alt="" className="private"/>
                         </div>
-                        <p>{currentUser.username}</p>
+                        <p>{user.username}</p>
                     </div>
                 </div>
                 <img src={moreIcon} alt="more icon" className="more-icon"/>
