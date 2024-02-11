@@ -1,5 +1,3 @@
-import axios from "axios";
-
 class GetPostLocalStorageDatas{
     static getData() {
         const datas = localStorage.getItem("tweeterLocalStorage")

@@ -74,6 +74,24 @@ class UsefulFeatures{
     //     return listOfTweets
     // }
 
+    static getUpdateListOfTweet(useState, useEffect){
+        const [tweetsData, setTweetsData] = useState(
+            GetPostLocalStorageDatas.getData() || ""
+        );
+        
+        useEffect(() => {
+            function handleTweetChange(e) {
+            setTweetsData(e.detail);
+            }
+            window.addEventListener("tweetChanged", handleTweetChange);
+            return () => {
+            window.removeEventListener("tweetChanged", handleTweetChange);
+            };
+        }, []);
+
+        return tweetsData.tweets
+    }
+
     static filterAndReverseTweets(listOfTweets, username){
 
         const reversed = [...listOfTweets].reverse()

@@ -9,6 +9,9 @@ import TweetForm from '../tweetform/tweet-form';
 
 function TweetEditor() {
 
+  // const user = useContext(UserContext);
+  // const currentUser = UsefulFeatures.findUser(user.userName)
+
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const user = UsefulFeatures.findUser(currentUser.username)
 
